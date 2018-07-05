@@ -1,0 +1,288 @@
+{
+   "configuration":{
+      "section_name":"Device and Test Configuration",
+      "catalogue":{
+         "nfc":"NFC State",
+         "google_sync":"Google Sync Enabled",
+         "google_account":"Google Account Enabled",
+         "wifi":"WiFi State",
+         "user_apps":"User installed Apps",
+         "dev_name":"Device Name",
+         "app":"Application Name",
+         "display_brightness":"Display Brightness (in scale of 0 to 255)",
+         "os":"OS Version",
+         "network":"Network type",
+         "operator":"Operator Name",
+         "gps":"GPS State",
+         "bt":"BT State",
+         "display_timeout":"Display Timeout (milli seconds)",
+         "additional":"Additional user input",
+         "manufacturer":"Device Manufacturer",
+         "waiting_time":"Waiting time after boot (in minutes)"
+      },
+      "section_data":{
+         "nfc":"false",
+         "google_sync":"true",
+         "google_account":"true",
+         "wifi":"true",
+         "dev_name":"SM-G900H",
+         "display_brightness":"110",
+         "os":"5.0",
+         "network":"NETWORK_TYPE_HSDPA",
+         "operator":"Vodafone IN",
+         "gps":"true",
+         "bt":"true",
+         "display_timeout":"30000",
+         "manufacturer":"samsung",
+         "waiting_time":"925",
+         "user_apps":[
+            {
+               "app":"com.wipro.multicamera"
+            },
+            {
+               "app":"com.wipro.honda"
+            },
+            {
+               "app":"com.wipro.mirrar.mirrarcast.communication"
+            },
+            {
+               "app":"moodsofnorway.watchface"
+            },
+            {
+               "app":"com.urbanclap.urbanclap"
+            }
+         ]
+      }
+   },
+   "description":{
+      "section_name":"Test Description",
+      "catalogue":{
+         "sampling_period":"Sampling period",
+         "end_time":"End Time",
+         "test_id":"Test ID",
+         "test_type":"Test Type",
+         "start_time":"Start Time",
+         "app_type":"Application Type",
+         "dev_id":"Device ID",
+         "app_name":"Target Application"
+      },
+      "section_data":{
+         "start_time":"1529375933095",
+         "end_time":"1529376520631",
+         "test_id":"1529375932949",
+         "app_type":"Travel Companion",
+         "test_type":"Idle",
+         "dev_id":"353285068353770",
+         "app_name":"com.telstra.lot"
+      }
+   },
+   "session_overview":{
+      "section_name":"TCP-IP Session and Data Overview",
+      "catalogue":{
+         "udp_total":"Total UDP Session",
+         "tcp_concurrent":"Concurrent TCP Session",
+         "tcp_total":"Total TCP Session",
+         "ip_total":"Total IP Session",
+         "ul":"Total Uplink Data (KB)",
+         "packet_retransmission":"Retransmission packet count",
+         "dl":"Total Downlink Data (KB)"
+      },
+      "section_data":{
+         "udp_total":"5",
+         "tcp_concurrent":"32.27087",
+         "tcp_total":"49",
+         "ip_total":"9",
+         "ul":"233.69531",
+         "packet_retransmission":"0",
+         "dl":"1669.2002"
+      }
+   },
+   "domain_overview":{
+      "section_name":"Domain Details",
+      "catalogue":{
+         "ip":"IP Address",
+         "hostname":"Host name"
+      },
+      "section_data":[
+         {
+            "hostname":"edge-mqtt-shv-01-maa2.facebook.com",
+            "ip":"157.240.23.12"
+         },
+         {
+            "hostname":"maa03s20-in-f14.1e100.net",
+            "ip":"216.58.197.46"
+         },
+         {
+            "hostname":"maa05s06-in-f14.1e100.net",
+            "ip":"172.217.163.206"
+         },
+         {
+            "hostname":"maa05s04-in-f14.1e100.net",
+            "ip":"172.217.163.142"
+         },
+         {
+            "hostname":"203.35.167.181",
+            "ip":"203.35.167.181"
+         },
+         {
+            "hostname":"maa05s03-in-f8.1e100.net",
+            "ip":"172.217.163.104"
+         },
+         {
+            "hostname":"maa03s29-in-f14.1e100.net",
+            "ip":"172.217.160.142"
+         },
+         {
+            "hostname":"ec2-54-243-117-167.compute-1.amazonaws.com",
+            "ip":"54.243.117.167"
+         },
+         {
+            "hostname":"li1465-183.members.linode.com",
+            "ip":"139.162.52.183"
+         },
+         {
+            "hostname":"server-54-230-190-94.maa3.r.cloudfront.net",
+            "ip":"54.230.190.94"
+         },
+         {
+            "hostname":"wa-in-f94.1e100.net",
+            "ip":"64.233.184.94"
+         },
+         {
+            "hostname":"maa03s28-in-f4.1e100.net",
+            "ip":"172.217.31.196"
+         },
+         {
+            "hostname":"103.235.47.74",
+            "ip":"103.235.47.74"
+         },
+         {
+            "hostname":"ec2-23-21-147-18.compute-1.amazonaws.com",
+            "ip":"23.21.147.18"
+         },
+         {
+            "hostname":"maa05s01-in-f14.1e100.net",
+            "ip":"172.217.163.46"
+         },
+         {
+            "hostname":"server-54-230-190-21.maa3.r.cloudfront.net",
+            "ip":"54.230.190.21"
+         },
+         {
+            "hostname":"maa03s29-in-f10.1e100.net",
+            "ip":"172.217.160.138"
+         },
+         {
+            "hostname":"49.51.36.197",
+            "ip":"49.51.36.197"
+         },
+         {
+            "hostname":"edge-star-shv-01-maa2.facebook.com",
+            "ip":"157.240.23.19"
+         },
+         {
+            "hostname":"server-54-230-190-22.maa3.r.cloudfront.net",
+            "ip":"54.230.190.22"
+         },
+         {
+            "hostname":"sa-in-f188.1e100.net",
+            "ip":"74.125.200.188"
+         },
+         {
+            "hostname":"maa03s28-in-f10.1e100.net",
+            "ip":"172.217.31.202"
+         },
+         {
+            "hostname":"google-public-dns-a.google.com",
+            "ip":"8.8.8.8"
+         },
+         {
+            "hostname":"ec2-54-68-183-58.us-west-2.compute.amazonaws.com",
+            "ip":"54.68.183.58"
+         },
+         {
+            "hostname":"maa05s03-in-f14.1e100.net",
+            "ip":"172.217.163.110"
+         },
+         {
+            "hostname":"maa05s04-in-f8.1e100.net",
+            "ip":"172.217.163.136"
+         },
+         {
+            "hostname":"49.51.230.14",
+            "ip":"49.51.230.14"
+         },
+         {
+            "hostname":"maa03s22-in-f174.1e100.net",
+            "ip":"172.217.26.174"
+         },
+         {
+            "hostname":"76.b4.a86c.ip4.static.sl-reverse.com",
+            "ip":"108.168.180.118"
+         },
+         {
+            "hostname":"::",
+            "ip":"::"
+         },
+         {
+            "hostname":"I_Mobile_IBMWorklite_172_16_64_183203_171_211_4.icicibankltd.com",
+            "ip":"203.171.211.4"
+         },
+         {
+            "hostname":"fna-whatsapp-shv-02-fhyd1.fbcdn.net",
+            "ip":"157.240.186.98"
+         },
+         {
+            "hostname":"162.125.81.7",
+            "ip":"162.125.81.7"
+         },
+         {
+            "hostname":"ec2-50-17-236-79.compute-1.amazonaws.com",
+            "ip":"50.17.236.79"
+         },
+         {
+            "hostname":"maa03s22-in-f10.1e100.net",
+            "ip":"172.217.26.170"
+         },
+         {
+            "hostname":"maa05s01-in-f8.1e100.net",
+            "ip":"172.217.163.40"
+         },
+         {
+            "hostname":"maa03s18-in-f46.1e100.net",
+            "ip":"216.58.220.46"
+         }
+      ]
+   },
+   "per_ip_data":{
+      "section_name":"Per IP Data",
+      "catalogue":{
+         "time":"Time in second",
+         "hostname":"Hostname",
+         "data":"Data in bytes",
+         "tx":"Tx data consumption",
+         "rx":"Rx data consumption",
+         "composite":"Tx + Rx data consumption",
+         "signal":"Signal strength in DB",
+         "rrc":"Radio RRC State",
+         "battery":"Current consumption in milli amp"
+      },
+      "section_data":[
+         {
+            "time":0,
+            "battery":142,
+            "signal":-75,
+            "rrc":3,
+            "composite":[
+
+            ],
+            "tx":[
+
+            ],
+            "rx":[
+
+            ]
+         }
+      ]
+   }
+}
