@@ -7,73 +7,118 @@
 //
 
 import UIKit
-import FirebaseStorage
-
 
 class ViewController: UIViewController, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate{
-
-
+    
+    @IBOutlet var trackButton:UIButton!
+    @IBOutlet var messageLabel:UILabel!
+    
+    let startTitle = "Start Tracking"
+    let stopTitle = "Stop Tracking"
+    var trackStatus = false
+    var trackTimer:Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.trackButton.setTitle(startTitle, for: UIControlState.normal)
         
-       UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-        let loop = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.batteryStatus), userInfo: nil, repeats: true)
-        RunLoop.current.add(loop, forMode: .commonModes)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        let Alert = UIAlertController(title: "Alert", message: "plz open target application", preferredStyle: UIAlertControllerStyle.alert)
-        self.present(Alert, animated: true, completion: nil)
+    
+   
+    
+    @IBAction func trackButtonAction(sender:UIButton) {
+        if !trackStatus {
+            trackStatus = true
+            self.startTracking()
+        } else {
+            trackStatus = false
+            self.stopTracking()
+        }
     }
-
-  @objc func batteryStatus(){
-        let myDevice = UIDevice.current
-        myDevice.isBatteryMonitoringEnabled = true
-        let batLeft: Float = myDevice.batteryLevel
-        let i: UIDeviceBatteryState = myDevice.batteryState
-        let batinfo = Int((batLeft * 100)) as NSNumber
-        let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        let date = Date()
-        let dateString = dateFormatter.string(from: date) 
-        print(batinfo,dateString)
+    
+    func startTracking() {
+        self.trackButton.setTitle(stopTitle, for: UIControlState.normal)
         
-                if let filepath = Bundle.main.path(forResource: "data", ofType: "json") {
-                    do {
-                        let contents = try String(contentsOfFile: filepath)
-                        let data = contents.data(using: String.Encoding.utf8, allowLossyConversion: false)!
-                        do {
-                            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
-                            var andict:Dictionary = json
-                            var dict1 = andict["per_ip_data"] as! Dictionary<String, AnyObject>
-                            var dict2 = dict1["section_data"] as! Array<AnyObject>
-                            var batteryObj = dict2[0] as! [String:AnyObject]
-                            batteryObj["battery"] = batinfo
-                            dict2[0] = batteryObj as AnyObject
-                            dict1["section_data"] = dict2 as AnyObject
-                            andict["per_ip_data"] = dict1 as AnyObject
-                            dict1 = andict
-                            print(andict)
-                            let jsonData = try? JSONSerialization.data(withJSONObject: andict, options: [])
-                            let jsonString = String(data: jsonData!, encoding: .utf8)
-                            let datas: Data = NSKeyedArchiver.archivedData(withRootObject: andict)
-                            var ref: DatabaseReference!
-                            ref = Database.database().reference()
-                            
-                            let request = NSMutableURLRequest(url:NSURL(string: "http://54.164.87.105:8080/networkmonitoring-6-Apr-17/appdata")! as URL)
-                            request.httpMethod = "POST"
-                            request.setValue("Keep-Alive", forHTTPHeaderField: "Connection")
-                            uploadFiles(request: request, data: jsonData as! NSData)
-                        } catch let error as NSError {
-                            print("Failed to load: \(error.localizedDescription)")
-                        }
-
-                    } catch {
-                        print("Fetched")
+        if trackTimer == nil {
+            UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+            trackTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.batteryStatus), userInfo: nil, repeats: true)
+            RunLoop.current.add(trackTimer!, forMode: .commonModes)
+            
+//            let Alert = UIAlertController(title: "Alert", message: "plz open target application to track battery status", preferredStyle: UIAlertControllerStyle.alert)
+//            self.present(Alert, animated: true, completion: nil)
+        }
+    }
+    
+    func stopTracking() {
+        self.trackButton.setTitle(startTitle, for: UIControlState.normal)
+        
+        if trackTimer != nil {
+            trackTimer?.invalidate()
+            trackTimer = nil
+        }
+    }
+    
+    @objc func batteryStatus(){
+        
+        if let filepath = Bundle.main.path(forResource: "data", ofType: "json") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                let data = contents.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+                do {
+                    let myDevice = UIDevice.current
+                    myDevice.isBatteryMonitoringEnabled = true
+                    let batLeft: Float = myDevice.batteryLevel
+                    let dateFormatter : DateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "HH:mm:ss"
+                    let date = Date()
+                
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+                    var andict:Dictionary = json
+                    var dict3 = andict["configuration"] as! Dictionary<String, AnyObject>
+                    var catObj = dict3["catalogue"] as! Dictionary<String, AnyObject>
+                    catObj["dev_name"] = myDevice.systemName as AnyObject
+                    catObj["display_brightness"] = UIScreen.main.brightness as AnyObject
+                    catObj["os"] =  myDevice.systemVersion as AnyObject
+                    let reachability: Reachability = Reachability.forInternetConnection()
+                    let status = reachability.currentReachabilityStatus()
+                    if status == .init(0) {
+                        catObj["wifi"] = "Not Reachable" as AnyObject
                     }
-                } else {
-                    print("not found")
+                    else if status == .init(1) {
+                        catObj["wifi"] = "Reachable Via WiFi" as AnyObject
+                        }
+                    else if status == .init(2) {
+                        catObj["wifi"] =  "ReachableViaWWAN" as AnyObject
+                    }
+                    dict3["catalogue"] = catObj as AnyObject
+                    andict["configuration"] = dict3 as AnyObject
+                    var dict1 = andict["per_ip_data"] as! Dictionary<String, AnyObject>
+                    var dict2 = dict1["section_data"] as! Array<AnyObject>
+                    var batteryObj = dict2[0] as! [String:AnyObject]
+                    batteryObj["battery"] = Int((batLeft * 100)) as NSNumber
+                    batteryObj["time"] = dateFormatter.string(from: date) as AnyObject
+                    dict2[0] = batteryObj as AnyObject
+                    dict1["section_data"] = dict2 as AnyObject
+                    andict["per_ip_data"] = dict1 as AnyObject
+                    dict1 = andict
+                    print(andict)
+                    let jsonData = try? JSONSerialization.data(withJSONObject: andict, options: [])
+                    let jsonString = String(data: jsonData!, encoding: .utf8)
+                    let datas: Data = NSKeyedArchiver.archivedData(withRootObject: andict)
+                    
+                    let request = NSMutableURLRequest(url:NSURL(string: "http://54.164.87.105:8080/networkmonitoring-6-Apr-17/appdata")! as URL)
+                    request.httpMethod = "POST"
+                    request.setValue("Keep-Alive", forHTTPHeaderField: "Connection")
+                    uploadFiles(request: request, data: jsonData as! NSData)
+                } catch let error as NSError {
+                    print("Failed to load: \(error.localizedDescription)")
                 }
+                
+            } catch {
+                print("Fetched")
+            }
+        } else {
+            print("not found")
+        }
         
         
         
@@ -112,7 +157,7 @@ class ViewController: UIViewController, URLSessionDelegate, URLSessionTaskDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

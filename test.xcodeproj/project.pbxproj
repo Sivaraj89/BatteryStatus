@@ -9,29 +9,12 @@
 /* Begin PBXBuildFile section */
 		432EA74A20E619CA001017E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D50C1520E4B1B100CCB2BC /* AppDelegate.swift */; };
 		432EA74B20E619D2001017E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D50C1720E4B1B100CCB2BC /* ViewController.swift */; };
-		432EA82120E629B6001017E1 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA81A20E629B6001017E1 /* FirebaseAnalytics.framework */; };
-		432EA82220E629B6001017E1 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA81B20E629B6001017E1 /* FirebaseInstanceID.framework */; };
-		432EA82320E629B6001017E1 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA81C20E629B6001017E1 /* FirebaseCore.framework */; };
-		432EA82420E629B6001017E1 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA81D20E629B6001017E1 /* FirebaseNanoPB.framework */; };
-		432EA82520E629B6001017E1 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA81E20E629B6001017E1 /* nanopb.framework */; };
-		432EA82620E629B6001017E1 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA81F20E629B6001017E1 /* FirebaseCoreDiagnostics.framework */; };
-		432EA82720E629B6001017E1 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA82020E629B6001017E1 /* GoogleToolboxForMac.framework */; };
-		432EA8EC20E62D23001017E1 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8E520E62D22001017E1 /* FirebaseAnalytics.framework */; };
-		432EA8ED20E62D23001017E1 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8E620E62D23001017E1 /* FirebaseNanoPB.framework */; };
-		432EA8EE20E62D23001017E1 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8E720E62D23001017E1 /* GoogleToolboxForMac.framework */; };
-		432EA8EF20E62D23001017E1 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8E820E62D23001017E1 /* FirebaseInstanceID.framework */; };
-		432EA8F020E62D23001017E1 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8E920E62D23001017E1 /* FirebaseCoreDiagnostics.framework */; };
-		432EA8F120E62D23001017E1 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8EA20E62D23001017E1 /* FirebaseCore.framework */; };
-		432EA8F220E62D23001017E1 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8EB20E62D23001017E1 /* nanopb.framework */; };
-		432EA8F520E62D68001017E1 /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8F320E62D67001017E1 /* leveldb-library.framework */; };
-		432EA8F620E62D68001017E1 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8F420E62D68001017E1 /* FirebaseDatabase.framework */; };
-		432EA8F920E62FDD001017E1 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8F720E62FDD001017E1 /* GTMSessionFetcher.framework */; };
-		432EA8FA20E62FDD001017E1 /* FirebaseStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432EA8F820E62FDD001017E1 /* FirebaseStorage.framework */; };
 		439924A120ECB1EE003764C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 439924A020ECB1EE003764C6 /* GoogleService-Info.plist */; };
 		43D50C1B20E4B1B100CCB2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D50C1920E4B1B100CCB2BC /* Main.storyboard */; };
 		43D50C1D20E4B1B100CCB2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D50C1C20E4B1B100CCB2BC /* Assets.xcassets */; };
 		43D50C2020E4B1B100CCB2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D50C1E20E4B1B100CCB2BC /* LaunchScreen.storyboard */; };
 		43D50C2820E4B29600CCB2BC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 43D50C2720E4B29600CCB2BC /* data.json */; };
+		43F43FC620EF71AC007C15B3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F43FC520EF71AC007C15B3 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,19 +25,7 @@
 		432EA81E20E629B6001017E1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = "../../Downloads/Firebase 2/Analytics/nanopb.framework"; sourceTree = "<group>"; };
 		432EA81F20E629B6001017E1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = "../../Downloads/Firebase 2/Analytics/FirebaseCoreDiagnostics.framework"; sourceTree = "<group>"; };
 		432EA82020E629B6001017E1 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Downloads/Firebase 2/Analytics/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
-		432EA82820E629F5001017E1 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
 		432EA82920E62A52001017E1 /* test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-Bridging-Header.h"; sourceTree = "<group>"; };
-		432EA8E520E62D22001017E1 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		432EA8E620E62D23001017E1 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseNanoPB.framework; sourceTree = "<group>"; };
-		432EA8E720E62D23001017E1 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = "<group>"; };
-		432EA8E820E62D23001017E1 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		432EA8E920E62D23001017E1 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		432EA8EA20E62D23001017E1 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
-		432EA8EB20E62D23001017E1 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
-		432EA8F320E62D67001017E1 /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
-		432EA8F420E62D68001017E1 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
-		432EA8F720E62FDD001017E1 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
-		432EA8F820E62FDD001017E1 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseStorage.framework; sourceTree = "<group>"; };
 		43471C3820EB5EA4008B3CFB /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
 		439924A020ECB1EE003764C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43D50C1220E4B1B100CCB2BC /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +36,8 @@
 		43D50C1F20E4B1B100CCB2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43D50C2120E4B1B100CCB2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D50C2720E4B29600CCB2BC /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		43F43FC420EF71AB007C15B3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		43F43FC520EF71AC007C15B3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,24 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				432EA8ED20E62D23001017E1 /* FirebaseNanoPB.framework in Frameworks */,
-				432EA8F120E62D23001017E1 /* FirebaseCore.framework in Frameworks */,
-				432EA8EC20E62D23001017E1 /* FirebaseAnalytics.framework in Frameworks */,
-				432EA82120E629B6001017E1 /* FirebaseAnalytics.framework in Frameworks */,
-				432EA82220E629B6001017E1 /* FirebaseInstanceID.framework in Frameworks */,
-				432EA8FA20E62FDD001017E1 /* FirebaseStorage.framework in Frameworks */,
-				432EA8EF20E62D23001017E1 /* FirebaseInstanceID.framework in Frameworks */,
-				432EA82320E629B6001017E1 /* FirebaseCore.framework in Frameworks */,
-				432EA82420E629B6001017E1 /* FirebaseNanoPB.framework in Frameworks */,
-				432EA82520E629B6001017E1 /* nanopb.framework in Frameworks */,
-				432EA82620E629B6001017E1 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				432EA8F220E62D23001017E1 /* nanopb.framework in Frameworks */,
-				432EA8F920E62FDD001017E1 /* GTMSessionFetcher.framework in Frameworks */,
-				432EA8F020E62D23001017E1 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				432EA8F620E62D68001017E1 /* FirebaseDatabase.framework in Frameworks */,
-				432EA82720E629B6001017E1 /* GoogleToolboxForMac.framework in Frameworks */,
-				432EA8EE20E62D23001017E1 /* GoogleToolboxForMac.framework in Frameworks */,
-				432EA8F520E62D68001017E1 /* leveldb-library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,20 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				43471C3820EB5EA4008B3CFB /* test.entitlements */,
-				432EA8E520E62D22001017E1 /* FirebaseAnalytics.framework */,
-				432EA8EA20E62D23001017E1 /* FirebaseCore.framework */,
-				432EA8E920E62D23001017E1 /* FirebaseCoreDiagnostics.framework */,
-				432EA8E820E62D23001017E1 /* FirebaseInstanceID.framework */,
-				432EA8E620E62D23001017E1 /* FirebaseNanoPB.framework */,
-				432EA8E720E62D23001017E1 /* GoogleToolboxForMac.framework */,
-				432EA8EB20E62D23001017E1 /* nanopb.framework */,
-				432EA8F420E62D68001017E1 /* FirebaseDatabase.framework */,
-				432EA8F320E62D67001017E1 /* leveldb-library.framework */,
-				432EA8F820E62FDD001017E1 /* FirebaseStorage.framework */,
-				432EA8F720E62FDD001017E1 /* GTMSessionFetcher.framework */,
-				432EA82820E629F5001017E1 /* Firebase.h */,
 				43D50C1520E4B1B100CCB2BC /* AppDelegate.swift */,
 				43D50C1720E4B1B100CCB2BC /* ViewController.swift */,
+				43F43FC420EF71AB007C15B3 /* Reachability.h */,
+				43F43FC520EF71AC007C15B3 /* Reachability.m */,
 				43D50C2720E4B29600CCB2BC /* data.json */,
 				43D50C1920E4B1B100CCB2BC /* Main.storyboard */,
 				43D50C1C20E4B1B100CCB2BC /* Assets.xcassets */,
@@ -241,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				432EA74B20E619D2001017E1 /* ViewController.swift in Sources */,
+				43F43FC620EF71AC007C15B3 /* Reachability.m in Sources */,
 				432EA74A20E619CA001017E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
